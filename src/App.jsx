@@ -7,6 +7,12 @@ import IncludeCheck from './components/IncludeCheck';
 import { useState } from 'react';
 import './index.css'
 
+import { IconButton } from "@material-tailwind/react";
+import { Button } from "@material-tailwind/react";
+ 
+import { Tooltip} from "@material-tailwind/react";
+
+
 const App = () => {
   const [isCopied, setCopied] = useState(false)
   const [length,setLength] = useState(0)
@@ -17,6 +23,19 @@ const App = () => {
   let [result , setResult] = useState('')
     let yourPasswordIsHere = ''
 
+  
+  
+    function copyPassword(e) {
+   
+      var copyText = e.target.closest('.container').firstElementChild.firstElementChild;
+      console.log(copyText)
+      setCopied(true)
+      copyText.select
+      navigator.clipboard.writeText(copyText.value);
+    }
+  
+  
+  
   function Password() {
     setCopied(false)
     let includeupperCase = 'ABCDEFGHIJKLMNOPQURSTUVWXYZ'
@@ -50,7 +69,7 @@ setResult(fixedLengthPass)
 },[length,upperCase,lowerCase,symbol,number])
   
 
-  return <div className='bg-[#CAEDF7] w-full h-[100vh] flex flex-col gap-10 justify-center items-center'>
+  return <div className='container bg-[#CAEDF7] w-full h-[100vh] flex flex-col gap-10 justify-center items-center'>
     <DisplayPassword isCopied={isCopied} setCopied={setCopied} Password={Password} result={result} />
   
     <div className='shadow-lg w-2/3 h-[20rem] rounded  bg-white'> 
@@ -62,9 +81,17 @@ setResult(fixedLengthPass)
           setLowerCase={setLowerCase} lowerCase={lowerCase}
           setNumber={setNumber} number={number}
           setSymbol={setSymbol} symbol={symbol} />
-        </div>
-    </div>
+      </div>
 
+    
+    </div>
+    <Tooltip content={isCopied? 'Copied':'Copy Text'}>
+      
+      <Button size='lg'  onClick={(e) => { copyPassword(e) }}>
+      <span>Copy Password</span>
+    </Button>
+
+    </Tooltip>
   </div>
 }
 
