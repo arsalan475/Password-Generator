@@ -69,11 +69,12 @@ setResult(fixedLengthPass)
 },[length,upperCase,lowerCase,symbol,number])
   
 
-  return <div className='main-container bg-[#CAEDF7] w-[100vw] h-[100vh] flex flex-col gap-10 justify-center items-center'>
+  return <div className=' main-container bg-[#CAEDF7] w-[100vw] h-[100vh] flex flex-col gap-10 justify-center items-center'>
+          <h1 className='text-2xl sm:text-4xl font-semibold'>Password Generator</h1>
     <DisplayPassword isCopied={isCopied} setCopied={setCopied} Password={Password} result={result} />
   
     <div className='shadow-lg w-2/3 h-[20rem] rounded  bg-white'> 
-      <h1 className=' my-6 mx-14 py-2 rounded  border-0 border-b-2 font-extrabold text-3xl font-sans'>Costomize your Password</h1>
+      <h1 className=' my-6 mx-14 py-2 rounded  border-0 border-b-2 font-extrabold text-lg sm:text-3xl font-sans'>Costomize your Password</h1>
   <div className='flex'>
       <GeneratePassword setLength={setLength} length={length}/>
       
@@ -85,7 +86,7 @@ setResult(fixedLengthPass)
 
     
     </div>
-    <Tooltip content={isCopied? 'Copied':'Copy Text'}>
+    <Tooltip content={isCopied? 'Password Copied':'Copy Password'}>
       
       <Button size='lg'  onClick={(e) => { copyPassword(e) }}>
       <span>Copy Password</span>

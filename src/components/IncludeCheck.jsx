@@ -10,29 +10,29 @@ const IncludeCheck = ({symbol,setSymbol,lowerCase,setLowerCase,upperCase,setUppe
 
 
   return (
-      <div className='flex w-[50%] flex-col'> 
-          <div className='flex'>
-          <Checkbox color={ 'red'} label="UpperCase" onChange={(e) => {
+      <div className='flex w-full sm:w-1/2 flex-col'> 
+          <div>
+          <Checkbox  color={ 'black'} label="UpperCase" onChange={(e) => {
                   setUppercase(e.target.checked)
               }}/>
           </div>
-          <div className='flex gap-2'>
+          <div>
               
-              <Checkbox color={ 'red'} label="LowerCase" onChange={(e) => {
+              <Checkbox color={ 'black'} label="LowerCase" onChange={(e) => {
                   setLowerCase(e.target.checked)
               }} />
               
           </div>
-          <div className='flex gap-2'>
+          <div>
               
-              <Checkbox color={ 'red'} label="Number" onChange={(e) => {
+              <Checkbox  color={ 'black'} label="Number" onChange={(e) => {
                   setNumber(e.target.checked)
               }}/>
               
           </div>
-          <div className='flex gap-2'>
+          <div>
               
-              <Checkbox color={ 'red'} label="Symbol" onChange={(e) => {
+              <Checkbox color={ 'black'} label="Symbol" onChange={(e) => {
                   setSymbol(e.target.checked)
               }} />
               
