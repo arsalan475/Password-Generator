@@ -26,13 +26,13 @@ const App = () => {
     
 for (let i = 0; i < length; i++) {
   
- let j = Math.floor(Math.random() * length);
+ 
   
- if (number) yourPasswordIsHere += String(includenumber.charAt(j))
- if(symbol) yourPasswordIsHere += includesymbol.charAt(j)
-  if (lowerCase) yourPasswordIsHere += includelowerCase.charAt(j)
-  if (upperCase) yourPasswordIsHere += includeupperCase.charAt(j)
-console.log(j)
+ if (number) yourPasswordIsHere += includenumber.charAt(Math.floor(Math.random() * includenumber.length))
+ if(symbol) yourPasswordIsHere += includesymbol.charAt(Math.floor(Math.random() * includesymbol.length))
+  if (lowerCase) yourPasswordIsHere += includelowerCase.charAt(Math.floor(Math.random() * includelowerCase.length))
+  if (upperCase) yourPasswordIsHere += includeupperCase.charAt(Math.floor(Math.random() * includeupperCase.length))
+
   
   
   
