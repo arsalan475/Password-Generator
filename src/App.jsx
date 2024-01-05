@@ -27,7 +27,7 @@ const App = () => {
   
     function copyPassword(e) {
    
-      var copyText = e.target.closest('.container').firstElementChild.firstElementChild;
+      var copyText = e.target.closest('.main-container').firstElementChild.firstElementChild;
       console.log(copyText)
       setCopied(true)
       copyText.select
@@ -69,7 +69,7 @@ setResult(fixedLengthPass)
 },[length,upperCase,lowerCase,symbol,number])
   
 
-  return <div className='container bg-[#CAEDF7] w-full h-[100vh] flex flex-col gap-10 justify-center items-center'>
+  return <div className='main-container bg-[#CAEDF7] w-[100vw] h-[100vh] flex flex-col gap-10 justify-center items-center'>
     <DisplayPassword isCopied={isCopied} setCopied={setCopied} Password={Password} result={result} />
   
     <div className='shadow-lg w-2/3 h-[20rem] rounded  bg-white'> 
